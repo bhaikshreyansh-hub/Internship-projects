@@ -1,23 +1,12 @@
-# Python
-__pycache__/
-*.pyc
 venv/
 .venv/
-
-# Generated data - too large for GitHub
+__pycache__/
+*.pyc
 chroma_db/
 faiss_index/
 documents.parquet
 query_log.jsonl
 ingest_progress.json
 model_comparison_results.csv
-
-# Raw documents large dataset
-raw_documents/large_dataset/
-raw_documents/ai_ml_dataset/
-
-# Streamlit and Windows artifacts
 .streamlit/
 AppData/
-Thumbs.db
-.DS_Store
