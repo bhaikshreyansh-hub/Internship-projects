@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row mb-4">
+    <div class="col">
+        <h2><i class="bi bi-journal-text"></i> My Notes</h2>
+    </div>
+</div>
+
+<!-- Search Bar -->
+<form method="get" action="/notes" class="mb-4">
+    <div class="input-group">
+        <input type="text" name="search" class="form-control" placeholder="Search notes..." value="{{ search }}">
+        <button class="btn btn-outline-primary" type="submit"><i class="bi bi-search"></i> Search</button>
+        {% if search %}
+        <a href="/notes" class="btn btn-outline-secondary">Clear</a>
+        {% endif %}
+    </div>
+</form>
+
+<!-- Create Note Form -->
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+        <i class="bi bi-plus-circle"></i> Add New Note
+    </div>
+    <div class="card-body">
+        <form method="post" action="/notes/create">
+            <div class="mb-3">
+                <input type="text" name="title" class="form-control" placeholder="Note title" required>
+            </div>
+            <div class="mb-3">
+                <textarea name="content" class="form-control" rows="3" placeholder="Write your note here..." required></textarea>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check">
+                    <input type="checkbox" name="important" id="important" class="form-check-input" value="on">
+                    <label for="important" class="form-check-label text-danger">
+                        <i class="bi bi-star-fill"></i> Mark as Important
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-save"></i> Save Note
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Notes List -->
+{% if notes %}
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% for note in notes %}
+        <div class="col">
+            <div class="card h-100 note-card shadow-sm {% if note.important %}border-warning{% endif %}">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <h5 class="card-title mb-0">{{ note.title }}</h5>
+                        {% if note.important %}
+                        <span class="badge bg-warning text-dark important-badge">
+                            <i class="bi bi-star-fill"></i> Important
+                        </span>
+                        {% endif %}
+                    </div>
+                    <p class="card-text text-muted">{{ note.content }}</p>
+                </div>
+                <div class="card-footer bg-transparent d-flex justify-content-end gap-2">
+                    <a href="/notes/edit/{{ note.id }}" class="btn btn-sm btn-outline-secondary">
+                        <i class="bi bi-pencil"></i> Edit
+                    </a>
+                    <a href="/notes/delete/{{ note.id }}"
+                       class="btn btn-sm btn-outline-danger"
+                       onclick="return confirm('Delete this note?')">
+                        <i class="bi bi-trash"></i> Delete
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <div class="text-center py-5 text-muted">
+        <i class="bi bi-journal-x" style="font-size: 3rem;"></i>
+        <p class="mt-3 fs-5">
+            {% if search %}No notes found for "{{ search }}"{% else %}No notes yet. Add your first note above!{% endif %}
+        </p>
+    </div>
+{% endif %}
+
+{% endblock %}

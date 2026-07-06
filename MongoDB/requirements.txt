@@ -1,0 +1,5 @@
+pymongo
+chromadb
+sentence-transformers
+transformers
+torch
