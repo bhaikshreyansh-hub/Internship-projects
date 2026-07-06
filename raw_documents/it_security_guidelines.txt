@@ -1,0 +1,21 @@
+IT Security Guidelines
+
+All employees must use multi-factor authentication (MFA) when accessing company systems
+remotely. Passwords must be at least 12 characters long, rotated every 90 days, and must
+not be reused across the last 5 password changes.
+
+Company laptops are encrypted by default using full-disk encryption. Employees must not
+disable encryption or install unauthorized software outside the approved IT catalog.
+
+Sensitive customer data must never be stored on local drives or personal cloud storage.
+All data classified as "Confidential" or higher must be stored only in approved company
+systems, such as the internal document management platform or the secure data warehouse.
+
+Phishing attempts should be reported immediately to security@company.com. Employees who
+click a suspicious link should disconnect from the network and notify IT within 15 minutes.
+
+VPN access is mandatory when connecting to internal systems from outside the office
+network. Split-tunneling is disabled by default for all VPN profiles.
+
+Security awareness training is mandatory annually for all employees, and completion is
+tracked by HR as part of compliance reporting.

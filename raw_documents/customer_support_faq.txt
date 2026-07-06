@@ -1,0 +1,25 @@
+Customer Support FAQ
+
+Q: How do I reset my account password?
+A: Go to the login page and click "Forgot password." You will receive a reset link via
+email within 5 minutes. The link expires after 30 minutes for security reasons.
+
+Q: Why was my subscription charge declined?
+A: Declined charges are usually due to an expired card, insufficient funds, or the bank
+flagging the transaction as suspicious. Update your payment method under Account Settings
+> Billing, and the system will automatically retry the charge within 24 hours.
+
+Q: Can I get a refund after canceling my subscription?
+A: Refunds are issued on a pro-rated basis for annual plans canceled within 14 days of
+renewal. Monthly plans are non-refundable once the billing cycle has started, but you
+will retain access until the end of the current period.
+
+Q: How do I export my data before closing my account?
+A: Navigate to Account Settings > Data Export and select "Request Export." You will
+receive a downloadable ZIP file via email within 24 hours containing all your account
+data in CSV and JSON formats.
+
+Q: Is there a mobile app available?
+A: Yes, the mobile app is available for both iOS and Android. Search for the company name
+in the App Store or Google Play. The mobile app supports all core features except bulk
+data import, which is currently only available on the web platform.
